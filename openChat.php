@@ -33,6 +33,10 @@
                 <textarea id="sendText" name="sendText" rows="15" cols="80"></textarea>
             </div>
 
+            <div id="warning">
+
+            </div>
+
 
         </section>
 
