@@ -2,14 +2,16 @@
 $(function() {
     $("#sendText").keyup(pushText);
 
-    $("#listenButton").click(pullText);
+    $("#listenButton").click(listen);
+
+    $("#listenName").focus(stopInterval);
 
 });
 
 
 
 function pushText() {
-    console.log("push");
+    // console.log("push");
     if (emptyCredentials()) {
         return;
     }
@@ -23,7 +25,7 @@ function pushText() {
     // console.log(text);
     
     let pushData = {username: username, password: password, text: pushtext};
-    console.log("RUN");
+    // console.log("RUN");
 
     $.ajax({
         url: "pushChat.php",
@@ -32,8 +34,8 @@ function pushText() {
         dataType: "text"
     })
     .done(function (data, textStatus, jqXHR) {
-        // Process data, as received in data parameter
-        console.log("finished " + data);
+        
+        // console.log("finished " + data);
         switch (data) {
             case "ERR_CHECK_CRED":
                 $("#warning").html("Warning: Username and/or Password is Incorrect");
@@ -48,7 +50,7 @@ function pushText() {
                 $("#warning").html("Error: Server Cannot be Updated");
                 break;
             case "SUCCESS":
-                console.log("SUCCESS");
+                //console.log("SUCCESS");
                 $("#warning").html("Connection Successful");
                 break;
             default:
@@ -56,8 +58,7 @@ function pushText() {
         }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-        // Request failed. Show error message to user. 
-        // errorThrown has error message, or "timeout" in case of timeout.
+        
         $("#warning").html("Fatal Error: POST Error");
         console.log(textStatus);
         console.log("Error: " + errorThrown);
@@ -79,8 +80,66 @@ function emptyCredentials() {
 }
 
 
+let islistening = false;
+let interval;
+
+
+function listen() {
+    if (islistening) {
+        return;
+    }
+    interval = setInterval(pullText, 100)
+    islistening = true;
+}
+
+function stopInterval() {
+    if (islistening) {
+        clearInterval(interval);
+        islistening = false;
+    }
+}
 
 function pullText() {
+    if ($("#listenName").val().length == 0) {
+        $("#listenWarning").html("Please Enter Person to Listen to");
+        return;
+    }
+    $("#listenWarning").html("");
+
+    let name = $("#listenName").val();
+
+    pullData = {username: name};
+
+    $.ajax({
+        url: "pullChat.php",
+        type: "GET",
+        data: pullData,
+        dataType: "text"
+    })
+    .done(function(data, textStatus, jqXHR) {
+
+        switch (data) {
+            case "ERR_GET":
+                $("#listenWarning").html("Fatal Error: Username did not go through");
+                break;
+            case "ERR_USER_NOT_FOUND":
+                $("#listenWarning").html("Error: Username does not exist");
+                break;
+            case "ERR_CHECK_QUERY":
+                $("#listenWarning").html("Error: Server Request Error");
+                break;
+            default:
+                $("#listenText").val(data);
+        }
+
+    })
+    .fail(function (jqXHR, textStatus, errorThrown) {
+        
+        $("#listenWarning").html("Fatal Error: GET Error");
+        // console.log(textStatus);
+        // console.log("Error: " + errorThrown);
+    });
+    
 
 }
 

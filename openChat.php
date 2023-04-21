@@ -12,6 +12,26 @@
     </head>
 
     <div class="list">
+        <?php
+            include "db.php";
+
+            $query = "SELECT username FROM openChat";
+            $result = $con->query($query);
+
+            if (!$result) {
+                die("Error executing query: ($con->errno) $con->error<br>SQL = $query");
+            }
+
+            echo "<h3>Existing Usernames</h3>";
+
+            echo "<ul>";
+            while ($row = $result->fetch_assoc()) {
+                echo "<li>" . $row["username"] . "</li>";
+            }
+
+            echo "</ul>";
+        ?>
+
 
     </div>
 
@@ -51,7 +71,11 @@
             </div>
 
             <div>
-                <textarea id="listenText" name="listenText" rows="15" cols="80"></textarea>
+                <textarea id="listenText" name="listenText" rows="15" cols="80" disabled></textarea>
+            </div>
+
+            <div id="listenWarning">
+
             </div>
 
         </section>
