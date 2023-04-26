@@ -63,7 +63,7 @@
                     <textarea id="sendText" name="sendText"></textarea>
                 </div>
 
-                <div id="warning">
+                <div class="warning" id="warning">
 
                 </div>
 
@@ -73,18 +73,15 @@
 
             <section class="listening">
                 <div>
-                    <label for="listenName">Enter name from list and click listen: </label>
+                    <label for="listenName">Enter name from list to listen: </label>
                     <input type="text" id="listenName" name="listenName">
-                    <button type="button" id="listenButton" name="listenButton">
-                        Listen
-                    </button>
                 </div>
 
                 <div>
                     <textarea id="listenText" name="listenText" disabled></textarea>
                 </div>
 
-                <div id="listenWarning">
+                <div class="warning" id="listenWarning">
 
                 </div>
 

@@ -2,7 +2,7 @@
 $(function() {
     $("#sendText").keyup(pushText);
 
-    $("#listenButton").click(listen);
+    $("#listenName").keyup(listen);
 
     $("#listenName").keydown(stopInterval);
 
