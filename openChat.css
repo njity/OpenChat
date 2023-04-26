@@ -1,0 +1,59 @@
+body {
+    font-family: "monaco", sans-serif, monospace;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    font-size: 70px;
+    font-weight: 900;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.main {
+    display: flex;
+    flex-wrap: nowrap;
+    border: solid 1px black;
+    margin: 5px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: solid 1px darkblue;
+    margin: 5px;
+}
+
+.sending {
+    display: flex;
+    flex-grow: 5;
+    flex-direction: column;
+    border: solid 1px lightcoral;
+    margin: 5px;
+}
+
+
+.listening {
+    display: flex;
+    flex-grow: 5;
+    flex-direction: column;
+    border: solid 1px lightcyan;
+    margin: 5px;
+}
+
+.listening label, .listening input {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    flex-grow: 1;
+    resize: none;
+    width: 100%;
+    height: 150%;
+}
+
+
