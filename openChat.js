@@ -4,7 +4,7 @@ $(function() {
 
     $("#listenButton").click(listen);
 
-    $("#listenName").focus(stopInterval);
+    $("#listenName").keydown(stopInterval);
 
 });
 
@@ -39,9 +39,11 @@ function pushText() {
         switch (data) {
             case "ERR_CHECK_CRED":
                 $("#warning").html("Warning: Username and/or Password is Incorrect");
+                
                 break;
             case "ERR_CHECK_QUERY":
                 $("#warning").html("Error: Server Request Error");
+                
                 break;
             case "ERR_UPDATE_CRED":
                 $("#warning").html("Warning: Username and/or Password Cannot be Found");
@@ -121,12 +123,15 @@ function pullText() {
         switch (data) {
             case "ERR_GET":
                 $("#listenWarning").html("Fatal Error: Username did not go through");
+                clearInterval(interval);
                 break;
             case "ERR_USER_NOT_FOUND":
                 $("#listenWarning").html("Error: Username does not exist");
+                clearInterval(interval);
                 break;
             case "ERR_CHECK_QUERY":
                 $("#listenWarning").html("Error: Server Request Error");
+                clearInterval(interval);
                 break;
             default:
                 $("#listenText").val(data);
