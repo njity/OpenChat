@@ -147,7 +147,7 @@ function pullText() {
                 break;
             default:
                 $("#listenWarning").css("border", "solid 1px rgb(51, 238, 70)");
-                $("#listenWarning").html("Person Exists");
+                $("#listenWarning").html("User Exists");
                 $("#listenText").css("transform","translateY(-5px)");
                 $("#listenText").css("box-shadow","0px 5px 10px 5px rgba(254, 197, 255, 0.5)");
                 $("#listenText").val(data);
