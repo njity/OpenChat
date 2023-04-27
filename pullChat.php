@@ -23,6 +23,8 @@
 
     echo $t;
 
+    $stmt->close();
+
     //
 
 

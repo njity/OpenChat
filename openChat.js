@@ -104,6 +104,7 @@ function stopInterval() {
 function pullText() {
     if ($("#listenName").val().length == 0) {
         $("#listenWarning").html("Please Enter Person to Listen to");
+        clearInterval(interval);
         return;
     }
     $("#listenWarning").html("");

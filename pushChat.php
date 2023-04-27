@@ -43,6 +43,8 @@
     
     echo "SUCCESS";
 
+    $stmt->close();
+
     
     
     //

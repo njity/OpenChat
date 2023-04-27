@@ -17,6 +17,7 @@ header {
     flex-wrap: nowrap;
     border: solid 1px black;
     margin: 5px;
+    padding: 5px;
 }
 
 .list {
@@ -25,6 +26,7 @@ header {
     flex-grow: 1;
     border: solid 1px darkblue;
     margin: 5px;
+    padding: 10px;
 }
 
 .sending {
@@ -33,6 +35,7 @@ header {
     flex-direction: column;
     border: solid 1px lightcoral;
     margin: 5px;
+    padding: 10px;
 }
 
 
@@ -40,8 +43,9 @@ header {
     display: flex;
     flex-grow: 5;
     flex-direction: column;
-    border: solid 1px lightcyan;
+    border: solid 1px rgb(48, 142, 142);
     margin: 5px;
+    padding: 10px;
 }
 
 .listening label, .listening input {
@@ -50,10 +54,16 @@ header {
 }
 
 textarea {
-    flex-grow: 1;
+    flex-grow: 4;
     resize: none;
-    width: 100%;
+    width: 99%;
     height: 150%;
+}
+
+.warning {
+    flex-grow: 1;
+    margin: 5px;
+    padding: 10px;
 }
 
 
