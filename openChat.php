@@ -25,7 +25,9 @@
         <div class="main">
 
 
-            <div class="list">
+            <fieldset class="list">
+                <legend>Usernames</legend>
+
                 <?php
                     include "db.php";
 
@@ -36,8 +38,6 @@
                         die("Error executing query: ($con->errno) $con->error<br>SQL = $query");
                     }
 
-                    echo "<div class='userHead'>Existing Usernames</div>";
-
                     echo "<ul>";
                     while ($row = $result->fetch_assoc()) {
                         echo "<li>" . $row["username"] . "</li>";
@@ -47,9 +47,10 @@
                 ?>
 
 
-            </div>
+            </fieldset>
 
-            <section class="sending">
+            <fieldset class="sending">
+                <legend>Send Message</legend>
                 <div class="horizontal">
                     <div> 
                         <input type="text" id="username" name="username" required>
@@ -74,13 +75,16 @@
                 </div>
 
 
-            </section>
+            </fieldset>
 
 
-            <section class="listening">
-                <div>
-                    <label for="listenName">Enter a name from the list to listen: </label>
-                    <input type="text" id="listenName" name="listenName">
+            <fieldset class="listening">
+                <legend>Receive Message</legend>
+                <div class="horizontal">
+                    <div>
+                        <input type="text" id="listenName" name="listenName" title="Type A Name From The List" required>
+                        <label for="listenName">Username</label>
+                    </div>
                 </div>
 
                 
@@ -92,7 +96,7 @@
                     
                 </div>
 
-            </section>
+            </fieldset>
 
         </div>
 
