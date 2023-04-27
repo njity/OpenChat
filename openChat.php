@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>OpenChat</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <link rel="stylesheet" href="openChat.css">
         <script
             src="https://code.jquery.com/jquery-3.6.4.min.js"
@@ -49,19 +50,24 @@
             </div>
 
             <section class="sending">
-                <div>
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username">
-                </div>
+                <div class="horizontal">
+                    <div> 
+                        <input type="text" id="username" name="username" required>
+                        <label for="username">Username</label>
+                    </div>
 
-                <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password">
+                    <div>
+                        <input type="password" id="password" name="password" required>
+                        <i class="fa-solid fa-eye" id="eye"></i>
+                        <label for="password">Password</label>
+                    </div>
                 </div>
+                
 
-                <div>
-                    <textarea id="sendText" name="sendText"></textarea>
-                </div>
+                
+                <textarea id="sendText" name="sendText"></textarea>
+                
+
 
                 <div class="warning" id="warning">
 
@@ -73,16 +79,17 @@
 
             <section class="listening">
                 <div>
-                    <label for="listenName">Enter name from list to listen: </label>
+                    <label for="listenName">Enter a name from the list to listen: </label>
                     <input type="text" id="listenName" name="listenName">
                 </div>
 
-                <div>
-                    <textarea id="listenText" name="listenText" disabled></textarea>
-                </div>
+                
+                <textarea id="listenText" name="listenText" disabled></textarea>
+                
+                
 
                 <div class="warning" id="listenWarning">
-
+                    
                 </div>
 
             </section>

@@ -1,5 +1,12 @@
+
+
 body {
     font-family: "monaco", sans-serif, monospace;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #04040c;
 }
 
 header {
@@ -10,14 +17,18 @@ header {
     font-weight: 900;
     justify-content: space-evenly;
     margin-bottom: 30px;
+    flex-grow: 1;
 }
 
 .main {
     display: flex;
     flex-wrap: nowrap;
+    flex-grow: 200;
     border: solid 1px black;
     margin: 5px;
-    padding: 5px;
+    padding: 20px;
+    gap: 30px;
+
 }
 
 .list {
@@ -26,7 +37,23 @@ header {
     flex-grow: 1;
     border: solid 1px darkblue;
     margin: 5px;
-    padding: 10px;
+    padding: 40px 5px 30px 20px;
+    border-radius: 40px;
+    
+}
+
+.userHead {
+    flex-grow: 1;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 20;
+}
+
+li {
+    flex-grow: 1;
 }
 
 .sending {
@@ -35,7 +62,9 @@ header {
     flex-direction: column;
     border: solid 1px lightcoral;
     margin: 5px;
-    padding: 10px;
+    padding: 30px 60px;
+    gap: 10px;
+    border-radius: 40px;
 }
 
 
@@ -45,25 +74,98 @@ header {
     flex-direction: column;
     border: solid 1px rgb(48, 142, 142);
     margin: 5px;
-    padding: 10px;
-}
+    padding: 30px 60px;
+    gap: 10px;
+    border-radius: 40px;
+} 
 
-.listening label, .listening input {
-    display: flex;
-    flex-direction: column;
-}
 
 textarea {
-    flex-grow: 4;
+    flex-grow: 1;
     resize: none;
-    width: 99%;
-    height: 150%;
+    background-color: #011111;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 40px;
+    margin-top: 20px;
+    transition: 1s ease all;
+    
+}
+
+textarea:focus  { outline: none; }
+
+.sending textarea:hover, .sending textarea:focus {
+    transform: translateY(-5px);
+    box-shadow:  0px 5px 10px 5px rgba(238, 128, 240, 0.5);
 }
 
 .warning {
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    /* position: relative; */
+    border: solid 1px green;
+    /* top: 30px; */
     margin: 5px;
-    padding: 10px;
+    padding: 13px 20px 10px 20px;
+    height: 20px;
+    border-radius: 40px;
 }
 
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
+.horizontal div {
+    position: relative;
+}
+
+input {
+    padding: 17px 7px 5px 5px;
+    background-color: #00000000;
+    border: none;
+    border-bottom: 2px solid #004849;
+    color: white;
+}
+
+input:hover {
+    background-color: rgba(127, 255, 212, 0.05);
+}
+
+input:focus {
+    
+}
+
+input:focus { outline:none; }
+
+.sending input:focus ~ label {
+    top: 0px;
+    font-size: 13px;
+    color: rgb(176, 176, 176);
+}
+
+.sending input:valid ~ label {
+    top: 0px;
+    font-size: 13px;
+    color: rgb(4, 112, 118);
+}
+
+.sending label {
+    position: absolute;
+    /* pointer-events: none; */
+    left: 4px;
+    top: 8px;
+    color: #454545;
+    transition: 0.5s ease all;
+    font-size: 17px;
+    pointer-events: none;;
+}
+
+.fa-eye{
+    position: absolute;
+    top: 28%;
+    right: 4%;
+    cursor: pointer;
+    color: rgb(15, 124, 108);
+}

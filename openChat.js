@@ -5,6 +5,8 @@ $(function() {
     $("#listenName").keyup(listen);
 
     $("#listenName").keydown(stopInterval);
+    
+    $("#eye").click(showHide);
 
 });
 
@@ -147,6 +149,15 @@ function pullText() {
     });
     
 
+}
+
+function showHide() {
+    $("#eye").toggleClass("fa-eye-slash");
+    if ($("#password").attr("type") === "password") {
+        $("#password").attr("type", "text");
+    } else {
+        $("#password").attr("type", "password");
+    }
 }
 
 
