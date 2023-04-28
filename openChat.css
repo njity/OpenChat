@@ -27,7 +27,7 @@ header {
     display: flex;
     flex-wrap: nowrap;
     flex-grow: 200;
-    border: solid 1px black;
+    border: none;
     margin: 5px;
     padding: 20px;
     gap: 30px;
@@ -221,14 +221,14 @@ label {
 
 #button:hover {
     /* transform: translateY(-5px); */
-    box-shadow: 0px 5px 10px 10px rgb(216, 190, 255);
+    box-shadow: 0px 0px 10px 10px rgb(216, 190, 255);
     text-shadow: 0px 0px 20px rgb(216, 190, 255);
 }
 
 #button:active {
     transition: 0.1s ease all;
     transform: translateY(7px);
-    box-shadow: 0px 5px 10px 10px rgb(97, 78, 126);
+    box-shadow: 0px 0px 10px 10px rgb(97, 78, 126);
     background-color: rgb(69, 54, 130);
     border-style: inset;
 
