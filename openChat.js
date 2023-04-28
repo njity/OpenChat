@@ -73,8 +73,8 @@ function pushText() {
         
         $("#warning").html("Fatal Error: POST Error");
         flashWarningSend();
-        console.log(textStatus);
-        console.log("Error: " + errorThrown);
+        // console.log(textStatus);
+        // console.log("Error: " + errorThrown);
     });
 }
 
@@ -83,14 +83,20 @@ function emptyCredentials() {
     if (($("#username").val()).length == 0) {
         $("#warning").html("Warning: Enter Username");
         flashWarningSend();
-        console.log("user");
         return true;
     } else if (($("#password").val()).length == 0) {
         $("#warning").html("Warning: Enter Password");
         flashWarningSend();
-        console.log("pass");
         return true;
     }
+
+    if (($("#sendText").val()).length == 14999) {
+        $("#warning").html("Maximum Characters Reached");
+        flashWarningSend();
+        return true;
+    }
+
+    
     return false;
 }
 
