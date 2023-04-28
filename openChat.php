@@ -66,7 +66,12 @@
                 
 
                 
-                <textarea id="sendText" name="sendText"></textarea>
+                <textarea id="sendText" name="sendText" placeholder="Type here send message..."></textarea>
+
+                <div class="clearButton">
+                    <button type="button" id="button">Clear</button>
+                </div>
+                
                 
 
 
@@ -88,7 +93,7 @@
                 </div>
 
                 
-                <textarea id="listenText" name="listenText" disabled></textarea>
+                <textarea id="listenText" name="listenText" placeholder="Enter username to get their message..."disabled></textarea>
                 
                 
 

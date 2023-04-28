@@ -2,11 +2,15 @@
 $(function() {
     $("#sendText").keyup(pushText);
 
-    $("#listenName").keyup(listen);
+    $("#listenName").keyup(() => {
+        setTimeout(listen, 10);   
+    });
 
     $("#listenName").keydown(stopInterval);
     
     $("#eye").click(showHide);
+
+    $("#button").click(clearText);
 
 });
 
@@ -107,6 +111,7 @@ function stopInterval() {
     if (islistening) {
         clearInterval(interval);
         islistening = false;
+        $("#listenText").val("");
     }
 }
 
@@ -200,6 +205,10 @@ function flashWarningListen() {
         $("#listenWarning").css("text-shadow", "");
         $("#listenWarning").css("background-color", "");
     }, 1200);
+}
+
+function clearText() {
+    $("#sendText").val("");
 }
 
 
