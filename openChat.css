@@ -220,7 +220,6 @@ label {
 }
 
 #button:hover {
-    /* transform: translateY(-5px); */
     box-shadow: 0px 0px 10px 10px rgb(216, 190, 255);
     text-shadow: 0px 0px 20px rgb(216, 190, 255);
 }
@@ -233,3 +232,5 @@ label {
     border-style: inset;
 
 }
+
+/* https://medium.com/@mignunez/html-css-javascript-how-to-show-hide-password-using-the-eye-icon-27f033bf84ad */

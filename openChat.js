@@ -124,6 +124,7 @@ function stopInterval() {
 function pullText() {
     if ($("#listenName").val().length == 0) {
         $("#listenWarning").html("Please Enter Person to Listen To");
+        $("#listenText").attr("placeholder", "Enter username to get their message...");
         flashWarningListen();
         clearInterval(interval);
         return;
@@ -159,6 +160,7 @@ function pullText() {
                 break;
             default:
                 $("#listenWarning").css("border", "solid 1px rgb(51, 238, 70)");
+                $("#listenText").attr("placeholder", "");
                 $("#listenWarning").html("User Exists");
                 $("#listenText").css("transform","translateY(-5px)");
                 $("#listenText").css("box-shadow","0px 5px 10px 5px rgba(254, 197, 255, 0.5)");
@@ -215,6 +217,7 @@ function flashWarningListen() {
 
 function clearText() {
     $("#sendText").val("");
+    $("#sendText").trigger("focus");
 }
 
 
