@@ -1,4 +1,4 @@
 # Usernames and Passwords
-user1 | admin1
+user1 - admin1
 
-user2 | admin2
+user2 - admin2
